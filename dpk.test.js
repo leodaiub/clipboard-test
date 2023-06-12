@@ -1,4 +1,4 @@
-const { deterministicPartitionKey } = require("./dpk");
+import { createHash, deterministicPartitionKey } from "./dpk";
 
 describe("deterministicPartitionKey", () => {
   it("Returns the literal '0' when given no input", () => {

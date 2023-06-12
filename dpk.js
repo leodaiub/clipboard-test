@@ -6,15 +6,13 @@ export const createHash = (data) =>
 export const deterministicPartitionKey = (event) => {
   const TRIVIAL_PARTITION_KEY = "0";
   const MAX_PARTITION_KEY_LENGTH = 256;
-  let candidate;
 
-  if (event) {
-    if (event.partitionKey) {
-      candidate = event.partitionKey;
-    } else {
-      const data = JSON.stringify(event);
-      candidate = createHash(data);
-    }
+  const { partitionKey } = event || {};
+  let candidate = partitionKey;
+
+  if (!!event && !partitionKey) {
+    const data = JSON.stringify(event);
+    candidate = createHash(data);
   }
 
   if (candidate) {

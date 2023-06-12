@@ -12,7 +12,8 @@
     }
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --runTestsByPath './dpk.test.js'",
+    "test:ts": "jest --runTestsByPath './src/dpk.test.ts' ",
     "build": "tsc",
     "prestart:ts": "npm run build",
     "start:ts": "node ./out/index",

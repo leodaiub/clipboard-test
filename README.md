@@ -10,3 +10,8 @@ If you are a JS novice, here's how to get started:
 2. Run `npm i` in this repo to install dependencies
 3. Run `npm test` to run the automated tests
 4. Run `npm start` to launch `index.js` for any manual testing
+
+### TS Files
+
+1. Run `npm test:ts` to run the automated tests
+2. Run `npm start:ts` to launch `/src/index.ts` for any manual testing

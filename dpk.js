@@ -8,7 +8,7 @@ export const deterministicPartitionKey = (event) => {
   const MAX_PARTITION_KEY_LENGTH = 256;
 
   const { partitionKey } = event || {};
-  let candidate = partitionKey;
+  let candidate = partitionKey || TRIVIAL_PARTITION_KEY;
 
   if (!!event && !partitionKey) {
     const data = JSON.stringify(event);
